@@ -1,0 +1,9 @@
+site_name: Provider-V2 Docs
+site_url: https://nichengfuben.github.io/provider-docs/
+repo_url: https://github.com/nichengfuben/provider-docs
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Plugins: plugins.md
+  - Release: release.md

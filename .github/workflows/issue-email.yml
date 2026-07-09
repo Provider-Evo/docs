@@ -1,0 +1,24 @@
+name: Issue to email
+
+on:
+  issues:
+    types: [opened, reopened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.office365.com
+          server_port: 587
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[provider-docs] Issue #${{ github.event.issue.number }}: ${{ github.event.issue.title }}"
+          to: nichegnfuben@outlook.com
+          from: ${{ secrets.SMTP_USERNAME }}
+          body: |
+            ${{ github.event.issue.html_url }}
+            
+            ${{ github.event.issue.body }}
