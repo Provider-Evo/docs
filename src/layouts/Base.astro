@@ -1,0 +1,21 @@
+---
+const { title = 'Provider-Evo' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav style="padding:1rem;border-bottom:1px solid #ddd;display:flex;gap:1rem">
+      <a href="/">首页</a>
+      <a href="/docs/user/">用户手册</a>
+      <a href="/docs/develop/">开发文档</a>
+    </nav>
+    <main style="padding:1.5rem;max-width:960px;margin:0 auto">
+      <slot />
+    </main>
+  </body>
+</html>
