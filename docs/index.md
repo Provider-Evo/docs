@@ -5,7 +5,7 @@ Provider-Evo 是 provider-v2 的插件化演进版本。
 ## 快速开始
 
 ```bash
-pip install provider-guide==2.2.0a0 echotools==2.0.0 provider-sdk>=0.3.0
+pip install provider-guide==2.2.0b0 echotools>=2.0.0 provider-sdk>=0.3.0
 python main.py
 ```
 
@@ -35,5 +35,5 @@ WebUI 插件面板：`http://127.0.0.1:1337/` → 侧栏「插件」。
 ## 发版路线
 
 1. `2.2.0-alpha` — 插件生态最小闭环
-2. `2.2.0-beta` — 文档站 + 面板完善
-3. `2.2.0` — 移除 `src/platforms` 双轨代码
+2. `2.2.0-beta` — 文档站 + 面板完善（当前）
+3. `2.2.0` — 正式版，已移除 `src/platforms` 双轨代码

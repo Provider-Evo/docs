@@ -1,6 +1,6 @@
-site_name: Provider-V2 Docs
-site_url: https://nichengfuben.github.io/provider-docs/
-repo_url: https://github.com/nichengfuben/provider-docs
+site_name: Provider-Evo Docs
+site_url: https://provider-evo.github.io/provider-docs/
+repo_url: https://github.com/Provider-Evo/provider-docs
 theme:
   name: material
 nav:

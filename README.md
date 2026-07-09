@@ -1,14 +1,21 @@
 # provider-docs
 
-Provider-V2 / Provider-Evo 官方文档站点。
+Provider-Evo 官方文档站点。
 
-## 本地预览
+## 本地预览（MkDocs）
 
 ```bash
 pip install mkdocs-material
 mkdocs serve
 ```
 
-## 发布
+## GitHub Pages
 
-推送到 `main` 分支后 GitHub Actions 自动部署 GitHub Pages。
+`main` 分支推送后由 `.github/workflows/pages.yml` 自动部署。
+
+站点地址：<https://provider-evo.github.io/provider-docs/>
+
+## Issue 邮件
+
+配置仓库 Secrets：`SMTP_USERNAME`、`SMTP_PASSWORD`（Outlook 应用密码）。  
+详见 [docs/release.md](docs/release.md)。
