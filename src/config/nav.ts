@@ -131,7 +131,11 @@ export const sidebars: Record<string, SidebarGroup[]> = {
   '/release/': [
     {
       text: '版本',
-      items: [{ text: '发版历史', href: '/release/' }],
+      items: [
+        { text: '发版历史', href: '/release/' },
+        { text: '版本规则', href: '/release/version-rules/' },
+        { text: '里程碑', href: '/release/milestones/' },
+      ],
     },
   ],
   '/faq/': [
@@ -178,6 +182,8 @@ export const searchIndex: NavLink[] = [
   { text: 'SDK 与契约', href: '/develop/sdk/' },
   { text: '测试与 CI', href: '/develop/testing/' },
   { text: '发版历史', href: '/release/' },
+  { text: '版本规则', href: '/release/version-rules/' },
+  { text: '里程碑', href: '/release/milestones/' },
   { text: 'FAQ 总览', href: '/faq/' },
   { text: '部署与启动', href: '/faq/deploy/' },
   { text: '插件排错', href: '/faq/plugins/' },
