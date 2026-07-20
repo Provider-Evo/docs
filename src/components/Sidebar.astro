@@ -1,0 +1,40 @@
+---
+import { resolveSidebar } from '../config/nav';
+
+interface Props {
+  pathname: string;
+}
+
+const { pathname } = Astro.props;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const groups = resolveSidebar(pathname);
+
+function normalizePath(href: string): string {
+  const full = `${base}${href.replace(/^\//, '')}`;
+  return full.endsWith('/') ? full : `${full}/`;
+}
+
+const current = pathname.endsWith('/') ? pathname : `${pathname}/`;
+---
+
+<aside class="docs-sidebar" id="docs-sidebar">
+  {
+    groups.map((group) => (
+      <section class="docs-sidebar-group">
+        <h2 class="docs-sidebar-group-title">{group.text}</h2>
+        {
+          group.items.map((item) => {
+            const href = normalizePath(item.href);
+            const active = current === href || current.startsWith(href);
+            return (
+              <a href={href} class:list={['docs-sidebar-link', { 'is-active': active }]}>
+                {item.text}
+              </a>
+            );
+          })
+        }
+      </section>
+    ))
+  }
+</aside>

@@ -1,7 +1,9 @@
 ---
-layout: ../layouts/Base.astro
+layout: ../../layouts/DocLayout.astro
 title: 发版历史
 ---
+
+<p class="page-meta">版本</p>
 
 # 发版历史
 
@@ -34,24 +36,18 @@ title: 发版历史
 
 | 分支 | 定位 |
 |------|------|
-| `dev` | 版本真源与日常开发；`release:` / `bump:` 提交落在此线 |
+| `dev` | 版本真源与日常开发 |
 | `main` | 稳定发布；从 `dev` 合并，版本号同步但通常滞后 |
-| `classical` | 重构前冻结快照（tag `archive/classical-frozen`） |
+| `classical` | 重构前冻结快照 |
 
 ## PyPI
 
 - `echotools>=2.3.0`
 - `provider-sdk>=0.3.2`
-- `provider-guide>=2.2.293`（包名 `provider-guide`，即 Provider-V2 / provider-core 核心）
+- `provider-guide>=2.2.293`
 
-## GitHub
+## 链接
 
-- 组织：<https://github.com/Provider-Evo>
 - 核心仓：<https://github.com/Provider-Evo/provider-core>
-- 文档站：<https://provider-evo.github.io/docs/>
 - 文档仓：<https://github.com/Provider-Evo/docs>
 - 插件市场：<https://github.com/Provider-Evo/plugin-repo>
-
-## Issue 邮件通知
-
-在 `docs` 仓库 Settings → Secrets 配置 `SMTP_USERNAME`、`SMTP_PASSWORD`（Outlook 应用密码）。新 Issue 通知 `nichegnfuben@outlook.com`。

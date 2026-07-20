@@ -1,32 +1,25 @@
 ---
-const { title = 'Provider-Evo' } = Astro.props;
-const rawBase = import.meta.env.BASE_URL;
-const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+import '../styles/tokens.css';
+import '../styles/shell.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Provider-Evo', description = 'Provider-Evo 官方文档' } = Astro.props;
 ---
+
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
     <title>{title}</title>
-    <style>
-      body { font-family: system-ui, sans-serif; line-height: 1.6; color: #1a1a1a; }
-      nav a { color: #0969da; text-decoration: none; }
-      nav a:hover { text-decoration: underline; }
-      main :global(pre) { background: #f6f8fa; padding: 1rem; overflow-x: auto; border-radius: 6px; }
-      main :global(table) { border-collapse: collapse; width: 100%; }
-      main :global(th), main :global(td) { border: 1px solid #d0d7de; padding: 0.5rem 0.75rem; text-align: left; }
-      main :global(th) { background: #f6f8fa; }
-    </style>
   </head>
   <body>
-    <nav style="padding:1rem;border-bottom:1px solid #ddd;display:flex;gap:1rem">
-      <a href={base}>首页</a>
-      <a href={`${base}plugins/`}>插件</a>
-      <a href={`${base}release/`}>发版</a>
-    </nav>
-    <main style="padding:1.5rem;max-width:960px;margin:0 auto">
-      <slot />
-    </main>
+    <slot />
+    <script src={`${import.meta.env.BASE_URL}docs.js`} defer></script>
   </body>
 </html>

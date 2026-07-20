@@ -1,0 +1,30 @@
+---
+import Base from './Base.astro';
+import Topbar from '../components/Topbar.astro';
+import Sidebar from '../components/Sidebar.astro';
+import DocToc from '../components/DocToc.astro';
+import '../styles/prose.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<Base title={title} description={description}>
+  <div class="docs-app">
+    <Topbar />
+    <div class="docs-body" id="docs-body">
+      <Sidebar pathname={pathname} />
+      <div class="docs-main-wrap">
+        <article class="docs-main docs-prose">
+          <slot />
+        </article>
+        <DocToc />
+      </div>
+    </div>
+  </div>
+</Base>
