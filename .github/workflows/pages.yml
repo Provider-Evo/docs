@@ -37,3 +37,6 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      - id: deployment_retry
+        if: failure() && steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
