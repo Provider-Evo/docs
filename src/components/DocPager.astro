@@ -1,0 +1,40 @@
+---
+import { resolvePrevNext } from '../config/nav';
+
+interface Props {
+  pathname: string;
+}
+
+const { pathname } = Astro.props;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const { prev, next } = resolvePrevNext(pathname, base);
+const link = (path: string) => `${base}${path.replace(/^\//, '')}`;
+
+if (!prev && !next) {
+  return null;
+}
+---
+
+<nav class="docs-pager" aria-label="文档分页">
+  {
+    prev ? (
+      <a href={link(prev.href)} class="docs-pager-link docs-pager-link--prev">
+        <span class="docs-pager-label">上一篇</span>
+        <span class="docs-pager-title">{prev.text}</span>
+      </a>
+    ) : (
+      <span />
+    )
+  }
+  {
+    next ? (
+      <a href={link(next.href)} class="docs-pager-link docs-pager-link--next">
+        <span class="docs-pager-label">下一篇</span>
+        <span class="docs-pager-title">{next.text}</span>
+      </a>
+    ) : (
+      <span />
+    )
+  }
+</nav>

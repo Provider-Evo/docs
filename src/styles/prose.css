@@ -58,6 +58,15 @@
   color: var(--text);
 }
 
+.docs-prose a:not(.docs-btn) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.docs-prose a:not(.docs-btn):hover {
+  color: var(--accent);
+}
+
 .docs-prose p {
   margin: 0 0 12px;
 }

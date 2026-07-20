@@ -1,0 +1,28 @@
+---
+import { resolveSection } from '../config/nav';
+
+interface Props {
+  pathname: string;
+  title: string;
+}
+
+const { pathname, title } = Astro.props;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const section = resolveSection(pathname);
+const link = (path: string) => `${base}${path.replace(/^\//, '')}`;
+---
+
+<nav class="docs-breadcrumbs" aria-label="面包屑导航">
+  <a href={base} class="docs-breadcrumb-link">首页</a>
+  {
+    section && (
+      <>
+        <span class="docs-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href={link(section.href)} class="docs-breadcrumb-link">{section.text}</a>
+      </>
+    )
+  }
+  <span class="docs-breadcrumb-sep" aria-hidden="true">/</span>
+  <span class="docs-breadcrumb-current" aria-current="page">{title}</span>
+</nav>

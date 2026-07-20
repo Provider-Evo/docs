@@ -51,6 +51,46 @@ export const homeFeatures = [
   },
 ];
 
+export function resolveSection(pathname: string): { text: string; href: string } | null {
+  const prefixes = Object.keys(sectionRoots).sort((a, b) => b.length - a.length);
+  for (const prefix of prefixes) {
+    if (pathname.includes(prefix.replace(/\/$/, ''))) {
+      return sectionRoots[prefix];
+    }
+  }
+  return null;
+}
+
+export function resolvePrevNext(pathname: string, base: string = '/'): { prev?: NavLink; next?: NavLink } {
+  const links = flattenSidebarLinks(resolveSidebar(pathname));
+  const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+  const normalize = (href: string): string => {
+    const full = `${normalizedBase}${href.replace(/^\//, '')}`;
+    return full.endsWith('/') ? full : `${full}/`;
+  };
+  const current = pathname.endsWith('/') ? pathname : `${pathname}/`;
+  let index = -1;
+  for (let i = 0; i < links.length; i += 1) {
+    if (current === normalize(links[i].href)) {
+      index = i;
+      break;
+    }
+  }
+  if (index < 0) return {};
+  return {
+    prev: index > 0 ? links[index - 1] : undefined,
+    next: index < links.length - 1 ? links[index + 1] : undefined,
+  };
+}
+
+export const sectionRoots: Record<string, { text: string; href: string }> = {
+  '/manual/': { text: '用户手册', href: '/manual/quickstart/' },
+  '/plugins/': { text: '插件', href: '/plugins/' },
+  '/develop/': { text: '开发', href: '/develop/' },
+  '/release/': { text: '发版', href: '/release/' },
+  '/faq/': { text: 'FAQ', href: '/faq/' },
+};
+
 export const sidebars: Record<string, SidebarGroup[]> = {
   '/manual/': [
     {

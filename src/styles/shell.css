@@ -22,16 +22,49 @@
 .docs-topbar-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   min-width: 0;
 }
 
-.docs-topbar-brand a {
+.docs-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--text);
   text-decoration: none;
   font-weight: 700;
   font-size: 15px;
   letter-spacing: -0.02em;
+  min-width: 0;
+}
+
+.docs-brand-link:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.docs-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.docs-brand-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.docs-home-shortcut {
+  display: none;
 }
 
 .docs-topbar-badge {
@@ -61,6 +94,20 @@
 }
 
 .docs-topbar-nav a:hover,
+.docs-topbar-nav a.is-active,
+.docs-sidebar-link:hover,
+.docs-sidebar-link.is-active,
+.docs-toc a:hover,
+.docs-toc a.is-active,
+.docs-search-results a:hover,
+.docs-pager-link:hover,
+.docs-breadcrumb-link:hover,
+.docs-sidebar-home:hover,
+.docs-brand-link:hover {
+  text-decoration: none;
+}
+
+.docs-topbar-nav a:hover,
 .docs-topbar-nav a.is-active {
   color: var(--accent);
   background: var(--accent-soft);
@@ -73,6 +120,9 @@
 }
 
 .docs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   font-size: 12px;
   font-weight: 600;
@@ -81,17 +131,35 @@
   border: 1px solid var(--border);
   background: var(--panel);
   color: var(--text);
-  transition: background 0.15s;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.docs-btn:hover,
+.docs-btn:focus,
+.docs-btn:visited {
+  text-decoration: none;
 }
 
 .docs-btn:hover {
   background: var(--panel-alt);
 }
 
-.docs-btn--primary {
+.docs-btn--primary,
+.docs-btn--primary:hover,
+.docs-btn--primary:focus,
+.docs-btn--primary:visited {
   border-color: transparent;
   background: var(--accent);
   color: #fff;
+}
+
+.docs-btn--primary:hover {
+  filter: brightness(1.05);
+}
+
+.docs-hero-actions .docs-btn {
+  min-width: 108px;
 }
 
 .docs-body {
@@ -109,6 +177,33 @@
   background: var(--panel);
   overflow-y: auto;
   padding: var(--space-md) 0;
+}
+
+.docs-sidebar-home {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 var(--space-md) var(--space-md);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--panel-alt);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.docs-sidebar-home:hover {
+  text-decoration: none;
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.docs-sidebar-home-icon {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .docs-sidebar-toggle {
@@ -160,6 +255,84 @@
 .docs-main {
   min-width: 0;
   max-width: 820px;
+}
+
+.docs-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 16px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.docs-breadcrumb-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.docs-breadcrumb-link:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.docs-breadcrumb-sep {
+  color: var(--border);
+  user-select: none;
+}
+
+.docs-breadcrumb-current {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.docs-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.docs-pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.docs-pager-link:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.docs-pager-link--next {
+  text-align: right;
+  grid-column: 2;
+}
+
+.docs-pager-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.docs-pager-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .docs-toc {
@@ -343,6 +516,10 @@
 
   .docs-topbar-nav {
     display: none;
+  }
+
+  .docs-home-shortcut {
+    display: inline-flex;
   }
 
   .docs-sidebar-toggle {

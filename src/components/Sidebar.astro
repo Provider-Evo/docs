@@ -19,6 +19,10 @@ const current = pathname.endsWith('/') ? pathname : `${pathname}/`;
 ---
 
 <aside class="docs-sidebar" id="docs-sidebar">
+  <a href={base} class="docs-sidebar-home">
+    <span class="docs-sidebar-home-icon" aria-hidden="true">←</span>
+    文档首页
+  </a>
   {
     groups.map((group) => (
       <section class="docs-sidebar-group">
@@ -26,7 +30,7 @@ const current = pathname.endsWith('/') ? pathname : `${pathname}/`;
         {
           group.items.map((item) => {
             const href = normalizePath(item.href);
-            const active = current === href || current.startsWith(href);
+            const active = current === href;
             return (
               <a href={href} class:list={['docs-sidebar-link', { 'is-active': active }]}>
                 {item.text}

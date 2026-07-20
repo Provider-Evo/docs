@@ -15,7 +15,11 @@ const searchJson = JSON.stringify(
 <header class="docs-topbar">
   <div class="docs-topbar-brand">
     <button type="button" class="docs-btn docs-sidebar-toggle" id="sidebar-toggle" aria-label="切换侧栏">菜单</button>
-    <a href={base}>Provider-Evo</a>
+    <a href={base} class="docs-btn docs-home-shortcut" aria-label="返回文档首页">首页</a>
+    <a href={base} class="docs-brand-link" aria-label="返回文档首页">
+      <span class="docs-brand-mark" aria-hidden="true">P</span>
+      <span class="docs-brand-text">{site.title}</span>
+    </a>
     <span class="docs-topbar-badge">v{site.version}</span>
   </div>
   <nav class="docs-topbar-nav" aria-label="主导航">
