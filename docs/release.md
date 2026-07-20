@@ -8,14 +8,14 @@
 
 ## PyPI
 
-- `echotools>=2.0.0`
-- `provider-sdk>=0.3.0`
-- `provider-guide==2.2.0`（包名 `provider-guide`，即 Provider-V2 核心）
+- `echotools>=2.3.0`
+- `provider-sdk>=0.3.3`
+- `provider-guide>=2.2.293`（包名 `provider-guide`，即 Provider-V2 核心）
 
 ## GitHub
 
 - 组织：<https://github.com/Provider-Evo>
-- 核心仓：<https://github.com/Provider-Evo/provider-v2>
+- 核心仓：<https://github.com/Provider-Evo/provider-core>
 - 文档站：<https://provider-evo.github.io/provider-docs/>
 - 插件市场：<https://github.com/Provider-Evo/plugin-repo>
 

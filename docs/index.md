@@ -1,11 +1,13 @@
-# Provider-Evo 文档
+﻿# Provider-Evo 文档
 
 Provider-Evo 是 provider-v2 的插件化演进版本。
 
 ## 快速开始
 
 ```bash
-pip install provider-guide==2.2.0b0 echotools>=2.0.0 provider-sdk>=0.3.0
+pip install -r requirements.txt
+# 或显式指定 PyPI 契约包：
+# pip install provider-guide>=2.2.293 echotools>=2.3.0 provider-sdk>=0.3.3
 python main.py
 ```
 
@@ -22,7 +24,7 @@ WebUI 插件面板：`http://127.0.0.1:1337/` → 侧栏「插件」。
 
 ## 本地目录
 
-- 核心网关：`provider-v2`（本仓库同级 `provider-self`）
+- 核心网关：`provider-core`（本仓库同级 `provider-core`）
 - 插件：`plugins/Provider-*`
 - 市场索引：`plugin-repo/plugins.json` + `plugin_details.json`
 - SDK：`provider-sdk`
