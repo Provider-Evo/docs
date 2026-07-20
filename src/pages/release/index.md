@@ -7,13 +7,13 @@ title: 发版历史
 
 # 发版历史
 
-依据 `provider-core` **`dev` 分支** `release:` / `bump:` 提交与 `config/main_config.toml` 整理。
+依据 `provider-core` **`dev` 分支** `release:` / `bump:` 提交与仓库内 `CHANGELOG.md`、`pyproject.toml`、`template/template_config.toml` 整理。
 
 ## 当前版本
 
 | 分支 | 版本 | 说明 |
 |------|------|------|
-| **dev** | **2.2.297** | 活跃开发 HEAD |
+| **dev** | **2.2.298** | 活跃开发 HEAD |
 | main | 低于 dev | 稳定线，待合并 dev 后追平 |
 
 ## 文档导航

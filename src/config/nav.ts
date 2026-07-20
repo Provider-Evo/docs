@@ -1,7 +1,7 @@
 export const site = {
   title: 'Provider-Evo',
   tagline: '统一 AI 模型网关与插件化运行时',
-  version: '2.2.297',
+  version: '2.2.298',
   github: 'https://github.com/Provider-Evo/provider-core',
   docsRepo: 'https://github.com/Provider-Evo/docs',
   pluginMarket: 'https://github.com/Provider-Evo/plugin-repo',
@@ -39,7 +39,7 @@ export const homeFeatures = [
   },
   {
     title: '热重载',
-    details: 'MaiBot 式单插件 on_unload → 清缓存 → on_load，开发迭代无需整进程重启',
+    details: '单插件 on_unload → 清缓存 → on_load，开发迭代无需整进程重启',
   },
   {
     title: '插件市场',

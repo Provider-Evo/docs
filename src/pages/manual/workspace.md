@@ -23,8 +23,8 @@ Provider-Evo 编排仓（monorepo 工作区）包含多个独立子树：
 
 ## 配置真源
 
-仅 `provider-core/config/main_config.toml`（模板见 `template/template_config.toml`）。不使用 `.env`。
+仅本地 `provider-core/config/main_config.toml`（模板见 `template/template_config.toml`；`config/` **不提交**）。不使用 `.env`。
 
 ## 版本号
 
-`server.version`（当前 dev **2.2.297**）为运行时唯一版本真源；`main` 合并后追平。
+`server.version`（当前 dev **2.2.298**）以仓库内 `template/template_config.toml` / `pyproject.toml` 为准；本地 `config/main_config.toml` 运行时读取但不提交。

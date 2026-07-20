@@ -17,7 +17,7 @@ title: 部署与启动
 
 ## fast_restart
 
-默认启用 MaiBot 对齐的快速进程重启；配置项见 `template/template_config.toml` 中 `fast_restart`。
+默认启用快速进程重启；配置项见 `template/template_config.toml` 中 `fast_restart`。
 
 ## 依赖版本
 
