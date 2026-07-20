@@ -39,4 +39,4 @@ WebUI 插件面板：`http://127.0.0.1:1337/` → 侧栏「插件」。
 
 修改 `plugins/` 下文件后，FileWatcher 会触发单插件 `on_unload` → 清模块缓存 → `on_load`。
 
-发版历史见 [发版](release/)（以 `provider-core` git tag 与 `release:` 提交为准；当前 dev **2.2.297**，main tag 止于 **v2.2.0**）。
+发版历史见 [发版](release/)（以 **dev** 分支 `2.2.xxx` 为准；当前 **2.2.297**，`main` 合并后追平）。

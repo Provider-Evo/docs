@@ -5,38 +5,37 @@ title: 发版历史
 
 # 发版历史
 
-依据 `provider-core` 仓库 git tag 与 `release:` 提交整理（非计划路线图）。
+依据 `provider-core` **`dev` 分支** `release:` / `bump:` 提交与 `config/main_config.toml` 整理。
+
+## 版本规则
+
+- 格式：**`2.2.xxx`**（三位补丁号），运行时真源为 `config/main_config.toml` 的 `server.version`
+- **`dev` 为准**：新版本先在 `dev` 迭代；验证后合并到 `main`，`main` 与 `dev` 共用同一套版本号，通常**落后数个补丁**
+- **不使用 `-alpha` / `-beta` 后缀**；`main` 上遗留的 `v2.2.0-alpha` 等 git tag 为早期标记，不再作为命名规范
 
 ## 当前版本
 
-**2.2.297** — `dev` 分支 HEAD，`config/main_config.toml` 中 `server.version` 为唯一运行时版本真源。
+| 分支 | 版本 | 说明 |
+|------|------|------|
+| **dev** | **2.2.297** | 活跃开发 HEAD |
+| main | 低于 dev | 稳定线，待合并 dev 后追平 |
 
-`main` 上最后一个 git tag 为 **v2.2.0**（2026-07-09）。此后新功能在 `dev` 上以 **2.2.xxx** 补丁号持续迭代，尚未打新 tag。
-
-## Git 标签（main）
-
-| 标签 | 日期 | 对应提交说明 |
-|------|------|----------------|
-| **v2.2.0-alpha** | 2026-07-09 | 插件容错加载、WebUI 插件管理 API、Webui/Coplan util 骨架 |
-| **v2.2.0-beta** | 2026-07-09 | 移除 legacy `src/platforms` 双轨代码、i18n 修复 |
-| **v2.2.0** | 2026-07-09 | `dev` 合并 `main`，首个稳定 tag |
-
-## dev 线 release 提交
+## 里程碑（dev）
 
 | 版本 | 说明 |
 |------|------|
-| **2.2.270** | 29 个插件脚手架、opencode 与 zen 合并为统一 zen 平台、WebUI 插件面板、插件市场 |
+| **2.2.270** | 插件生态落地：容错加载、29 个插件脚手架、opencode/zen 合并为 zen、WebUI 插件面板、插件市场 |
 | **2.2.274** | 插件生态迭代 |
-| **2.2.275** | legacy platforms 清理与 i18n（beta 主题的后继发版） |
+| **2.2.275** | 移除 legacy `src/platforms` 双轨代码、i18n 修复 |
 | **2.2.276** | 插件生态发版 |
-| **2.2.297** | 当前：MaiBot 式插件热重载、`fast_restart`、provider-sdk 0.3.2、服务生命周期与 TabBar 重构、CI lint 门禁 |
+| **2.2.297** | 当前：MaiBot 式插件热重载、`fast_restart`、provider-sdk 0.3.2、生命周期与 TabBar 重构、CI lint 门禁 |
 
 ## 分支策略
 
 | 分支 | 定位 |
 |------|------|
-| `main` | 稳定发布，tag 止于 v2.2.0 |
-| `dev` | 活跃开发，当前 2.2.297 |
+| `dev` | 版本真源与日常开发；`release:` / `bump:` 提交落在此线 |
+| `main` | 稳定发布；从 `dev` 合并，版本号同步但通常滞后 |
 | `classical` | 重构前冻结快照（tag `archive/classical-frozen`） |
 
 ## PyPI
