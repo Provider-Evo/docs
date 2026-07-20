@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Base.astro
+layout: ../layouts/Base.astro
 title: 发版历史
 ---
 
@@ -49,9 +49,10 @@ title: 发版历史
 
 - 组织：<https://github.com/Provider-Evo>
 - 核心仓：<https://github.com/Provider-Evo/provider-core>
-- 文档站：<https://provider-evo.github.io/provider-docs/>
+- 文档站：<https://provider-evo.github.io/docs/>
+- 文档仓：<https://github.com/Provider-Evo/docs>
 - 插件市场：<https://github.com/Provider-Evo/plugin-repo>
 
 ## Issue 邮件通知
 
-在 `provider-docs` 仓库 Settings → Secrets 配置 `SMTP_USERNAME`、`SMTP_PASSWORD`（Outlook 应用密码）。新 Issue 通知 `nichegnfuben@outlook.com`。
+在 `docs` 仓库 Settings → Secrets 配置 `SMTP_USERNAME`、`SMTP_PASSWORD`（Outlook 应用密码）。新 Issue 通知 `nichegnfuben@outlook.com`。
