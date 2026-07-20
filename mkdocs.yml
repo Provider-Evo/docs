@@ -1,9 +1,0 @@
-site_name: Provider-Evo Docs
-site_url: https://provider-evo.github.io/provider-docs/
-repo_url: https://github.com/Provider-Evo/provider-docs
-theme:
-  name: material
-nav:
-  - Home: index.md
-  - Plugins: plugins.md
-  - Release: release.md

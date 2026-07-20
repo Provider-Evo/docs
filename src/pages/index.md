@@ -1,4 +1,9 @@
-﻿# Provider-Evo 文档
+---
+layout: ../layouts/Base.astro
+title: Provider-Evo 文档
+---
+
+# Provider-Evo 文档
 
 Provider-Evo 是 provider-v2 的插件化演进版本。
 

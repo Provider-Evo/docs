@@ -1,3 +1,8 @@
+---
+layout: ../../layouts/Base.astro
+title: 插件
+---
+
 # 插件
 
 ## 安装

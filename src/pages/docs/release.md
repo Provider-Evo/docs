@@ -1,3 +1,8 @@
+---
+layout: ../../layouts/Base.astro
+title: 发版路线
+---
+
 # 发版路线
 
 | 版本 | 状态 | 说明 |
